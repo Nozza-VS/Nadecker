@@ -29,7 +29,7 @@ cd "$root"
 
 echo ""
 echo "Downloading NadekoBot, please wait."
-git clone -b 1.9 --recursive --depth 1 https://github.com/Kwoth/NadekoBot.git
+git clone -b shikhir-arora-liqukwd --recursive --depth 1 https://github.com/shikhir-arora/NadekoBot.git
 echo ""
 echo "NadekoBot downloaded."
 
