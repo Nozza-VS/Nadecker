@@ -3,7 +3,7 @@
 
 # NadekoBot + Docker = Nadecker!
 
-Latest Update: July 5, 2018 [2]
+Latest Update: July 5, 2018 [3]
 
 This is a docker container based on a upstream-maintained (but slight changes) version of [NadekoBot](http://github.com/shikhir-arora/NadekoBot).
 
