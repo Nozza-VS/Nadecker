@@ -15,9 +15,9 @@ rm /opt/NadekoBot/src/NadekoBot/credentials.json > /dev/null 2>&1
 ln -s /root/nadeko/credentials.json /opt/NadekoBot/src/NadekoBot/credentials.json > /dev/null 2>&1
 
 echo ""
-echo "Patching Nadeko Data Folder"
+# echo "Patching Nadeko Data Folder"
 mkdir -p /root/nadeko/patch
-cd /root/nadeko/patch && bash "./patch.sh"
+# Leaving this incase I ever want to patch 
 
 echo ""
 echo "Starting Redis-Server"

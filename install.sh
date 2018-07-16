@@ -1,4 +1,5 @@
 #!/bin/sh
+
 echo ""
 echo "NadekoBot Installer started."
 
@@ -42,7 +43,6 @@ echo "Download done"
 
 echo ""
 echo "Building NadekoBot"
-#dotnet add /opt/NadekoBot/src/NadekoBot package ImageSharp --version 1.0.0-alpha9-00194 --source https://www.myget.org/F/imagesharp/api/v3/index.json
 dotnet build --configuration Release
 echo ""
 echo "Building done."
