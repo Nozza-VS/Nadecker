@@ -6,10 +6,10 @@ FROM phusion/baseimage:master
 WORKDIR /opt/
 
 # Let us begin
-RUN	apt-get update
+RUN apt-get update
 RUN apt-get install software-properties-common apt-transport-https curl -y	
 RUN apt-get install -y wget
-RUN wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
+RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
 RUN dpkg -i packages-microsoft-prod.deb
 
 # Just incase
@@ -18,10 +18,7 @@ RUN	curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > mic
 RUN	mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 
 # Register the Microsoft Product feed for your distro version
-RUN sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
-
-# Add ffmpeg4 ppa
-# RUN add-apt-repository ppa:jonathonf/ffmpeg-3 -y 
+RUN sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-bionic-prod bionic main" > /etc/apt/sources.list.d/dotnetdev.list'
 
 
 # Updating existing tools
@@ -40,7 +37,7 @@ RUN	apt-get update && apt-get install -y dotnet-sdk-2.1
 RUN	apt-get update && apt-get install -y redis-server
 
 # Install required software
-RUN	apt-get update && apt-get install -y libopus0 opus-tools libopus-dev libsodium-dev rsync python python3-pip tzdata
+RUN	apt-get update && apt-get install -y libopus0 opus-tools libopus-dev libsodium-dev ffmpeg rsync python python3-pip tzdata
 
 # Add youtube-dl
 RUN	curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl && chmod a+rx /usr/local/bin/youtube-dl
