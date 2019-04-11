@@ -21,6 +21,18 @@ echo ""
 mkdir -p /root/nadeko/patch
 # Leaving this incase I ever want to patch 
 
+echo ""
+echo "Linking Image Configuration"
+mv -n /opt/NadekoBot/src/NadekoBot/data/images.json /root/nadeko/patch/images.json > /dev/null 2>&1
+
+rm /opt/NadekoBot/src/NadekoBot/data/images.json > /dev/null 2>&1
+# rm /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp2.1/data/images.json > /dev/null 2>&1
+# rm /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp2.1/data/images/images.json > /dev/null 2>&1
+
+ln -s /root/nadeko/patch/images.json /opt/NadekoBot/src/NadekoBot/data/images.json > /dev/null 2>&1
+# ln -s /root/nadeko/patch/images.json /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp2.1/data/images.json > /dev/null 2>&1
+# ln -s /root/nadeko/patch/images.json /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp2.1/data/images/images.json > /dev/null 2>&1
+echo ""
 
 
 echo ""
@@ -32,19 +44,5 @@ echo "Running NadekoBot with auto restart Please wait."
 cd /opt/NadekoBot/src/NadekoBot
 while :; do dotnet run -c Release; sleep 5s; done
 echo "Done"
-
-
-echo ""
-echo "Linking Image Configuration"
-mv -n /opt/NadekoBot/src/NadekoBot/data/images.json /root/nadeko/patch/images.json > /dev/null 2>&1
-
-rm /opt/NadekoBot/src/NadekoBot/data/images.json > /dev/null 2>&1
-rm /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp2.1/data/images.json > /dev/null 2>&1
-rm /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp2.1/data/images/images.json > /dev/null 2>&1
-
-ln -s /root/nadeko/patch/images.json /opt/NadekoBot/src/NadekoBot/data/images.json > /dev/null 2>&1
-ln -s /root/nadeko/patch/images.json /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp2.1/data/images.json > /dev/null 2>&1
-ln -s /root/nadeko/patch/images.json /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp2.1/data/images/images.json > /dev/null 2>&1
-echo ""
 
 exit 0
