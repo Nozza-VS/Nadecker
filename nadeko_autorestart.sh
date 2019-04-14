@@ -14,26 +14,15 @@ mv -n /opt/NadekoBot/src/NadekoBot/credentials.json /root/nadeko/credentials.jso
 rm /opt/NadekoBot/src/NadekoBot/credentials.json > /dev/null 2>&1
 ln -s /root/nadeko/credentials.json /opt/NadekoBot/src/NadekoBot/credentials.json > /dev/null 2>&1
 
-
-
 echo ""
-# echo "Patching Nadeko Data Folder"
+echo "Adding a patch Nadeko Data Folder"
 mkdir -p /root/nadeko/patch
-# Leaving this incase I ever want to patch 
 
 echo ""
-echo "Linking Image Configuration"
+echo "Linking Image Configuration (Using default if not specified).."
 mv -n /opt/NadekoBot/src/NadekoBot/data/images.json /root/nadeko/patch/images.json > /dev/null 2>&1
-
 rm /opt/NadekoBot/src/NadekoBot/data/images.json > /dev/null 2>&1
-# rm /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp2.1/data/images.json > /dev/null 2>&1
-# rm /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp2.1/data/images/images.json > /dev/null 2>&1
-
 ln -s /root/nadeko/patch/images.json /opt/NadekoBot/src/NadekoBot/data/images.json > /dev/null 2>&1
-# ln -s /root/nadeko/patch/images.json /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp2.1/data/images.json > /dev/null 2>&1
-# ln -s /root/nadeko/patch/images.json /opt/NadekoBot/src/NadekoBot/bin/Release/netcoreapp2.1/data/images/images.json > /dev/null 2>&1
-echo ""
-
 
 echo ""
 echo "Starting Redis-Server"
